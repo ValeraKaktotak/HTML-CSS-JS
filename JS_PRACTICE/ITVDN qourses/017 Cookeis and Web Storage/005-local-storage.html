@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+
+    <style>
+        .form-group {
+            margin: 4px;
+        }
+
+        .form-group label {
+            width: 75px;
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form name="writeForm">
+        <div class="form-group">
+            <label>Ключ</label>
+            <input type="text" name="keyInput" required>
+        </div>
+        <div class="form-group">
+            <label>Значение</label>
+            <input type="text" name="valueInput" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Запись">
+        </div>
+    </form>
+
+    <br>
+
+    <form name="readForm">
+        <div class="form-group">
+            <label>Ключ</label>
+            <input type="text" name="keyInput" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Чтение">
+        </div>
+    </form>
+
+    <script>
+        document.forms.writeForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const form = document.forms.writeForm;
+
+            let key = form.keyInput.value;
+            let value = form.valueInput.value;
+
+            localStorage.setItem(key, value); // сохранение значения по ключу
+
+            // localStorage - объект, позволяющий хранить информацию в памяти браузера.
+            // Хранение информации в localStorage не имеет ограничения по времени и может быть удалена
+            // с помощью JavaScript код.
+
+            // ключ и значение, которые записываются в localstorage, должны быть строковыми
+
+            // Источник - протокол, домен и порт
+            // например, https://itvdn.com - источник
+            
+            // http://example.com и http:/example.com:8080 разные источники так как отличаются значением порта
+            
+            // Для каждого источника создается свой экземпляр хранилища. В зависимости от браузера лимит на хранилище 5 Мб.
+
+            form.reset();
+        });
+
+        document.forms.readForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const form = document.forms.readForm;
+            let key = form.keyInput.value;
+
+            let value = localStorage.getItem(key); // чтение значения по ключу, если ключ не найден, возвращается null
+            alert(value);
+        });
+    </script>
+</body>
+
+</html>

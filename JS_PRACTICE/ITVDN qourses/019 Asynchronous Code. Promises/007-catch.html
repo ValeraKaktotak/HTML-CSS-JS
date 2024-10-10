@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>catch</title>
+</head>
+
+<body>
+    <script>
+        function processData(data) {
+            return new Promise(function (resolve, reject) {
+                let randomValue = Math.floor(Math.random() * 5001);
+
+                setTimeout(() => {
+                    if (randomValue > 1000) {
+                        console.log(`Данные ${data} обработаны за ${randomValue}.`);
+                        resolve(data + randomValue);
+                    }
+                    else {
+                        reject(new Error("Ошибка во время обработки данных " + data));
+                    }
+                }, randomValue);
+            });
+        }
+
+        let initialData = 10;
+
+        processData(initialData)
+            .then(data => processData(data))
+            .then(data => processData(data))
+            .then(data => processData(data))
+            .then(data => processData(data))
+            .catch(error => console.error(error.message));  // если один из промисов завершается с ошибкой то управление переходит
+                                                            // к ближайшему catch
+    </script>
+</body>
+
+</html>

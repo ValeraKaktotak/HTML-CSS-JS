@@ -1,0 +1,19 @@
+.my_slider{
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.my_slider .active{
+    display: inline-block!important;
+}
+.my_slider button{
+    width: 10%;
+}
+.my_slider .slider_image{
+    width: 78%;
+    display: none;
+}
+.my_slider .slider_image img{
+    width: 100%;
+}

@@ -1,0 +1,40 @@
+.calc{
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.calc .table{
+    min-height: 100px;
+    background: #458670;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.calc .table .result{
+    font-size: 40px;
+    line-height: 44px;
+}
+.calc .numbers table{
+    width: 100%;
+    text-align: center;
+}
+.calc .numbers table tr td button{
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+.calc .numbers{
+    margin-bottom: 20px;
+}
+.calc .operations table{
+    width: 100%;
+    text-align: center;
+}
+.calc .operations table tr td{
+    width: 20%;
+}
+.calc .operations table tr td button{
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Действие по умолчанию</title>
+</head>
+
+<body>
+    <form id="testForm">
+        Login <input type="text"> <br />
+        <input type="reset"> <!-- очищает форму, инициирует событие reset -->
+    </form>
+
+    <script>
+        document.querySelector("#testForm").addEventListener("reset", function (event) {
+            alert("Обработчик события reset");
+            let reslt = confirm("Очистить форму?");
+            if(!reslt) {
+                // preventDefault - Отмена действия по умолчанию
+                // для события reset действие по умолчанию - очистка содержимого формы
+                event.preventDefault(); // отмена действия
+                event.stopPropagation(); // отмена распространения
+            }
+        });
+    </script>
+</body>
+
+</html>

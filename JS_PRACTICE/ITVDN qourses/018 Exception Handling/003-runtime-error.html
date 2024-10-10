@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ошибки этапа выполнения</title>
+</head>
+<body>
+    <script>
+        // try-catch может отловить ошибки этапа выполнения
+        // Синтаксические ошибки не могут быть обработаны в блоке catch
+        try {
+            // lat test = 10; // убрать комментарий
+        } catch(error) {
+            console.log(error.name);
+            console.log(error.message);
+        }
+    </script>
+</body>
+</html>

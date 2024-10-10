@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Асинхронный код</title>
+    <style>
+        .one {
+            display: inline-block;
+            background: red;
+            width: 600px;
+        }
+        .two {
+            display: inline-block;
+            background: blue;
+            width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Загрузить</button>
+    <br>
+    <div class="one"></div>
+    <div class="two"></div>
+    <script>
+        // Описание изображений
+        // https://images.nasa.gov/details-PIA16239
+        // https://images.nasa.gov/details-PIA22312
+
+        const myDivOne = document.querySelector('div.one');
+        const myDivTwo = document.querySelector('div.two');
+        document.querySelector("button").addEventListener("click", function () {
+            // Функция downloadImage выполняет скачивание изображений асинхронно.
+            // синхронный код - каждая операция ожидает завершения предыдущей
+            // асинхронный код - операция выполняется в отдельном потоке и позволяет перейти к следующему действию 
+            let image1 = downloadImage("https://images-assets.nasa.gov/image/PIA16239/PIA16239~orig.jpg");
+            let image2 = downloadImage("https://images-assets.nasa.gov/image/PIA22312/PIA22312~orig.jpg");
+
+            myDivOne.append(image1);
+            myDivTwo.append(image2);
+        });
+
+        // загружает изображение по указанному адресу
+        function downloadImage(url) {
+            let image = new Image(500); // картинка шириной 500px
+            image.src = url; // после установки значения, браузер начинает скачивание изображения
+            return image;
+        }
+    </script>
+</body>
+
+</html>

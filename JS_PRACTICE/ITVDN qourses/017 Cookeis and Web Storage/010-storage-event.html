@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Событие storage</title>
+</head>
+
+<body>
+    <script>
+        // Событие storage возникает в момент обновления localStorage
+        // Событие не срабатывает на той же странице, на которой были внесены изменения в Storage
+
+        // Для проверки работы данного примера запустите эту страницу вместе с примером 005-local-storage.html
+        // (или любым другим, где происходит смена localStorage)
+        window.addEventListener("storage", function (e) {
+            console.log(`key:${e.key}, oldValue:${e.oldValue}, newValue:${e.newValue}, url:${e.url}, storageArea:${e.storageArea}`);
+        });
+    </script>
+</body>
+
+</html>

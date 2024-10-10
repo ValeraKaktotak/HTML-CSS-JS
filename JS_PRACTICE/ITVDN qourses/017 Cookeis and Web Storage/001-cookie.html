@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie</title>
+</head>
+
+<body>
+    <script>
+        document.cookie = "hello=world"; // добавление куки c именем hello и значением world
+        document.cookie = "test=123"; // добавление куки c именем test и значением 123
+        console.log(document.cookie); // чтение всех куки, относящихся к данному домену
+
+        document.cookie = "test=000"; // изменение значения куки с именем test
+        console.log(document.cookie); 
+
+        // Chrome игнорирует установку куки из локальных файлов, но данный код будет работать корректно, когда 
+        // будет опубликован на сервер.
+        // На момент написания этих примеров, локально, работу данного кода можно проверить в других браузерах, которые
+        // не используют движок Chromium, например, Firefox.
+    </script>
+</body>
+
+</html>

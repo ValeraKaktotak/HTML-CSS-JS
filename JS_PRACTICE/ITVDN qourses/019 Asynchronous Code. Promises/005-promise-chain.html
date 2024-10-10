@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цепочка объектов promise</title>
+</head>
+
+<body>
+    <button>Загрузить</button>
+    <br>
+    <br>
+    <script>
+        document.querySelector("button").addEventListener("click", function () {
+            let url1 = "https://images-assets.nasa.gov/image/PIA16239/PIA16239~orig.jpg";
+            let url2 = "https://images-assets.nasa.gov/image/PIA22312/PIA22312~orig.jpg";
+            let url3 = "https://images-assets.nasa.gov/image/PIA04591/PIA04591~orig.jpg";
+
+            // цепочка промисов, результат работы первого промиса передается в обработчик then, где создается второй 
+            // промис и его результат передается в следующий обработчик then и так далее по цепочке.
+            // это позволяет избежать вложенности кода, когда одна асинхронная операция должна запуститься после другой.
+            downloadImage(url1)                     // получаем промис
+                .then(image => {                    // указываем что делать когда promise перейдет в состояние resoved
+                    document.body.append(image);    
+                    return downloadImage(url2);     // выполняем метод, который возвращает promise
+                })
+                .then(image => {                    // результат работы предыдущего промиса передается в качестве значения
+                    document.body.append(image);
+                    return downloadImage(url3);
+                })
+                .then(image => {
+                    document.body.append(image);
+                });
+
+        });
+
+        function downloadImage(url) {
+            let promise = new Promise(function (resolve, reject) {
+                let image = new Image(500);
+                image.src = url;
+
+                image.onload = function () {
+                    resolve(image);
+                };
+
+                image.onerror = function (e) {
+                    reject(new Error("Не удалось загрузить изображение " + this.src));
+                }
+            });
+
+            return promise;
+        }
+    </script>
+</body>
+
+</html>

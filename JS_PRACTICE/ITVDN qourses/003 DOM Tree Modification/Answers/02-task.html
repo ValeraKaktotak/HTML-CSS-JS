@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+
+    <style>
+        div {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    Рабочие дни
+    <div id="workDaysOutput"></div>
+
+    Выходные дни
+    <div id="weekendDaysOutput"></div>
+
+    <script>
+        /*
+         Задание:
+         Выведите все рабочие дни недели в div используя параграфы, который находится после фразы "Рабочие дни", выведите все выходные дни недели после фразы "Выходные дни".
+         Можно внести в разметку соответствующие изменения, чтобы упросить задачу поиска необходимых div. 
+         Параграфы создавайте с помощью перебора массива days в параграф помещайте значение свойства name
+         */
+
+
+        let days = [{ name: "Sunday", isWorkDay: false },
+        { name: "Monday", isWorkDay: true },
+        { name: "Tuesday", isWorkDay: true },
+        { name: "Wednesday", isWorkDay: true },
+        { name: "Thursday", isWorkDay: true },
+        { name: "Friday", isWorkDay: true },
+        { name: "Saturday", isWorkDay: false }];
+
+        function createParagraph(text) {
+            let element = document.createElement("p");
+            element.innerText = text;
+            return element;
+        }
+
+        let workDayOutput = document.querySelector("#workDaysOutput");
+        let weekendDayOutput = document.querySelector("#weekendDaysOutput");
+
+        for (const day of days) {
+            if(day.isWorkDay) {
+                workDayOutput.append(createParagraph(day.name));
+            }
+            else {
+                weekendDayOutput.append(createParagraph(day.name));
+            }
+        }
+    </script>
+</body>
+
+</html>

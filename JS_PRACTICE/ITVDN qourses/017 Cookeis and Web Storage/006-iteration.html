@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перебор элементов в Storage</title>
+</head>
+
+<body>
+    <script>
+        for (let i = 0; i < localStorage.length; i++) { // length - количество ключей в хранилище
+            let key = localStorage.key(i); // key(i) - получить имя ключа по заданной позиции
+            console.log(`${key} = ${localStorage.getItem(key)}`);
+        }
+    </script>
+</body>
+
+</html>

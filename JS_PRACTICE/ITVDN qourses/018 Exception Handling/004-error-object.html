@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Объект ошибки</title>
+</head>
+
+<body>
+    <script>
+        function func1() {
+            func2();
+        }
+
+        function func2() {
+            func3();
+        }
+
+        function func3() {
+            let json = '{"name" : "Ivan", "age" = 20}';
+            let obj = JSON.parse(json);
+        }
+
+        try {
+            func1();
+        } catch (error) { // объект исключения
+            console.log(error.name); // имя ошибки
+            console.log(error.message); // текстовое сообщение с деталями ошибки
+            console.log(error.stack); // стек вызовов (строка, содержащая последовательность вызовов, которые привели к ошибке)
+        }
+    </script>
+</body>
+
+</html>
