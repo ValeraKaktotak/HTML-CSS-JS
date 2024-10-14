@@ -17,6 +17,20 @@
 	box-sizing: border-box;
 }
 
+.title {
+	max-width: 750px;
+	margin-inline: auto;
+	margin-bottom: 2rem;
+	margin-top: 7rem;
+	font-size: 2.5rem;
+	font-weight: 700;
+	font-family: var(--header-font);
+	color: var(--text-dark);
+	letter-spacing: -5px;
+	line-height: 2.5rem;
+	text-align: center;
+}
+
 .section-container {
 	padding: 5rem 1rem;
 	margin: auto;
@@ -56,6 +70,24 @@
 	}
 }
 
+.btn--home {
+	padding: 15px 17px;
+	font-size: 1.5rem;
+}
+
+.scroll-down {
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	font-size: 1.5rem;
+	padding: 8px 5px;
+	color: var(--text-dark);
+	background: var(--primary-color);
+	border-radius: 2rem;
+	border: 8px solid var(--white-color);
+}
+
 img {
 	display: flex;
 	width: 100%;
@@ -77,6 +109,7 @@ body {
 }
 
 body {
+	overflow-x: hidden;
 	font-family: 'Poppins', sans-serif;
 }
 
@@ -90,10 +123,14 @@ header {
 
 nav {
 	position: fixed;
+	top: 0;
 	isolation: isolate;
+	overflow: hidden;
 	width: 100%;
 	z-index: 9;
 }
+
+/* Header & nav sections */
 
 .nav__header {
 	padding: 1rem;
@@ -141,10 +178,82 @@ nav {
 	display: none;
 }
 
+/* Home section */
+
+.home {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	padding: 1rem;
+
+	&::before {
+		position: absolute;
+		content: '';
+		left: 0;
+		bottom: 0;
+		width: 100vw;
+		height: 50%;
+		background: var(--primary-color);
+		transform: translateY(50%) skewY(-4deg);
+		z-index: -1;
+	}
+}
+
+.home__form {
+	max-width: 800px;
+	margin-inline: auto;
+	margin-bottom: 4rem;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	background: var(--white-color);
+	box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.home__input-group {
+	flex: 1 0 170px;
+	display: grid;
+	gap: 10px;
+}
+
+.home__input {
+	width: 100%;
+	outline: none;
+	border: none;
+	font-size: 1.2rem;
+	color: var(--text-light);
+}
+
+.home__label {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--text-dark);
+
+	&::placeholder {
+		color: var(--text-light);
+	}
+}
+
+.home__img {
+	max-width: 1050px;
+	margin-inline: auto;
+	filter: drop-shadow(5px 20px 20px rgba(0, 0, 0, 0.5));
+}
+
 @media (width > 768px) {
+	.title {
+		margin-top: 2rem;
+		margin-bottom: 0;
+		font-size: 4.5rem;
+		line-height: 5rem;
+	}
+
 	nav {
 		position: static;
-		padding: 2rem 1rem 0;
+		padding: 2rem 1rem;
 		max-width: var(--max-width);
 		margin-inline: auto;
 		display: flex;
@@ -191,5 +300,9 @@ nav {
 	.nav-btn .btn {
 		color: var(--text-dark);
 		background: var(--primary-color);
+	}
+
+	.home {
+		padding: 5rem 1rem;
 	}
 }

@@ -16,7 +16,7 @@
 			<nav class="nav">
 				<div class="nav__header">
 					<div class="nav__logo">
-						<a href="#">RENT CAR</a>
+						<a href="#">CAR RENT</a>
 					</div>
 
 					<button class="btn btn--burger" id="burger">
@@ -44,6 +44,55 @@
 				</div>
 			</nav>
 		</header>
+
+		<h1 class="title">PREMIUM CAR RENT</h1>
+
+		<!-- Home Section -->
+		<section class="home">
+			<form class="home__form" action="/">
+				<div class="home__input-group">
+					<label class="home__label" for="location"
+						>Pick up & Return location</label
+					>
+					<input
+						class="home__input"
+						type="text"
+						name="location"
+						id="location"
+						placeholder="Dallas, Texas"
+					/>
+				</div>
+				<div class="home__input-group">
+					<label class="home__label" for="start">Start</label>
+					<input
+						class="home__input"
+						type="text"
+						name="start"
+						id="start"
+						placeholder="April 22, 11:00 AM"
+					/>
+				</div>
+				<div class="home__input-group">
+					<label class="home__label" for="stop">Stop</label>
+					<input
+						class="home__input"
+						type="text"
+						name="stop"
+						id="stop"
+						placeholder="April 30, 9:30 PM"
+					/>
+				</div>
+				<button class="btn btn--home">
+					<i class="ri-search-line"></i>
+				</button>
+			</form>
+
+			<img class="home__img" src="assets/header.png" alt="home_car" />
+
+			<a href="#about" class="scroll-down">
+				<i class="ri-arrow-down-line"></i>
+			</a>
+		</section>
 
 		<script src="script.js"></script>
 	</body>
