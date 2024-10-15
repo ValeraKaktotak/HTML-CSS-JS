@@ -17,3 +17,23 @@ navLinks.addEventListener('click', e => {
 	navLinks.classList.remove('open')
 	burgerBtnIcon.setAttribute('class', 'ri-menu-3-line')
 })
+
+const scrollRevealOption = {
+	origin: 'bottom',
+	distance: '50px',
+	duration: 1000,
+}
+
+ScrollReveal().reveal('.title', {
+	...scrollRevealOption,
+})
+
+ScrollReveal().reveal('.home__form', {
+	...scrollRevealOption,
+	delay: 500,
+})
+
+ScrollReveal().reveal('.home__img', {
+	...scrollRevealOption,
+	delay: 1000,
+})
