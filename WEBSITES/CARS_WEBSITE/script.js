@@ -37,3 +37,8 @@ ScrollReveal().reveal('.home__img', {
 	...scrollRevealOption,
 	delay: 1000,
 })
+
+ScrollReveal().reveal('.about__card', {
+	duration: 1000,
+	interval: 500,
+})
