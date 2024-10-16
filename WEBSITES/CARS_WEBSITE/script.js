@@ -42,3 +42,18 @@ ScrollReveal().reveal('.about__card', {
 	duration: 1000,
 	interval: 500,
 })
+
+ScrollReveal().reveal('.rent__image img', {
+	...scrollRevealOption,
+	origin: 'right',
+})
+
+ScrollReveal().reveal('.rent__content .section-header', {
+	...scrollRevealOption,
+	delay: 500,
+})
+
+ScrollReveal().reveal('.rent__text', {
+	...scrollRevealOption,
+	delay: 1000,
+})
