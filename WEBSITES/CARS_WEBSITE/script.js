@@ -57,3 +57,13 @@ ScrollReveal().reveal('.rent__text', {
 	...scrollRevealOption,
 	delay: 1000,
 })
+
+ScrollReveal().reveal('.rent__btn', {
+	...scrollRevealOption,
+	delay: 1500,
+})
+
+ScrollReveal().reveal('.story__card', {
+	...scrollRevealOption,
+	interval: 500,
+})
