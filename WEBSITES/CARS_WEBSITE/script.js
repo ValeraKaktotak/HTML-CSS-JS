@@ -18,6 +18,16 @@ navLinks.addEventListener('click', e => {
 	burgerBtnIcon.setAttribute('class', 'ri-menu-3-line')
 })
 
+const banner = document.querySelector('.banner__wrapper')
+
+const bannerContent = Array.from(banner.children)
+
+bannerContent.forEach(item => {
+	const duplicateNode = item.cloneNode(true)
+	duplicateNode.setAttribute('aria-hidden', true)
+	banner.appendChild(duplicateNode)
+})
+
 const scrollRevealOption = {
 	origin: 'bottom',
 	distance: '50px',

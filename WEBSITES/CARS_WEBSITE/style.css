@@ -394,6 +394,25 @@ nav {
 	}
 }
 
+/* Banner Section */
+
+.banner {
+	padding-block: 5rem;
+	overflow: hidden;
+}
+
+.banner__wrapper {
+	width: max-content;
+	display: flex;
+	align-items: center;
+	gap: 8rem;
+	animation: scroll 45s linear infinite;
+}
+
+.banner__wrapper img {
+	height: 100px;
+}
+
 @media (width > 540px) {
 	.story__grid {
 		grid-template-columns: repeat(2, 1fr);
@@ -488,5 +507,11 @@ nav {
 
 	.story__grid {
 		padding: 1.5rem;
+	}
+}
+
+@keyframes scroll {
+	to {
+		transform: translateX(calc(-50% - 4rem));
 	}
 }
