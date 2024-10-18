@@ -76,6 +76,12 @@
 	font-size: 1.5rem;
 }
 
+.btn--contact {
+	padding: 10px 12px;
+	font-size: 1.5rem;
+	background: var(--primary-color);
+}
+
 .scroll-down {
 	position: absolute;
 	bottom: 10%;
@@ -465,8 +471,109 @@ nav {
 	display: none;
 }
 
+/* Contact Section */
+
+.contact {
+	background: var(--text-dark);
+}
+
+.contact__container {
+	padding-bottom: 0;
+	display: grid;
+	gap: 2rem;
+
+	& .section-header {
+		font-size: 2.5rem;
+		line-height: 3.25rem;
+		letter-spacing: -2px;
+		color: var(--white-color);
+		text-align: center;
+	}
+}
+
+.contact__form {
+	width: 100%;
+	max-width: 450px;
+	margin-inline: auto;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	& input {
+		width: 100%;
+		outline: none;
+		border: none;
+		padding: 0.75rem 0;
+		font-size: 1rem;
+		color: var(--white-color);
+		background: transparent;
+		border-bottom: 2px solid var(--text-light);
+	}
+}
+
+.footer {
+	background: var(--text-dark);
+}
+
+.footer__container {
+	display: grid;
+	gap: 4rem 2rem;
+	border-bottom: 1px solid var(--text-light);
+}
+
+.footer__col h4 {
+	margin-bottom: 2rem;
+	font-size: 1.2rem;
+	font-family: var(--header-font);
+	color: var(--white-color);
+}
+
+.footer__links {
+	display: grid;
+	gap: 1rem;
+
+	& a {
+		color: var(--text-light);
+
+		&:hover {
+			color: var(--white-color);
+		}
+	}
+}
+
+.footer__social {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+
+	& a {
+		display: flow;
+		padding: 8px 12px;
+		font-size: 1.2rem;
+		color: var(--text-light);
+		border: 2px solid var(--text-light);
+		border-radius: 100%;
+
+		&:hover {
+			color: var(--primary-color);
+			border-color: var(--primary-color);
+		}
+	}
+}
+
+.footer__bar {
+	padding: 1rem;
+	font-size: 0.9rem;
+	text-align: center;
+	color: var(--text-light);
+}
+
 @media (width > 540px) {
 	.story__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.footer__container {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
@@ -584,6 +691,23 @@ nav {
 			transform: translateX(-50%);
 			max-width: 400px;
 		}
+	}
+
+	.contact__container {
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+
+		& .section-header {
+			text-align: left;
+		}
+	}
+
+	.contact__form {
+		margin-inline-end: unset;
+	}
+
+	.footer__container {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
