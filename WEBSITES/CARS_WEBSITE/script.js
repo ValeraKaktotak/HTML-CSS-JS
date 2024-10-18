@@ -77,3 +77,18 @@ ScrollReveal().reveal('.story__card', {
 	...scrollRevealOption,
 	interval: 500,
 })
+
+ScrollReveal().reveal('.download__image img', {
+	...scrollRevealOption,
+	origin: 'right',
+})
+
+ScrollReveal().reveal('.download__content .section-header', {
+	...scrollRevealOption,
+	delay: 500,
+})
+
+ScrollReveal().reveal('.download__links', {
+	...scrollRevealOption,
+	delay: 1000,
+})
