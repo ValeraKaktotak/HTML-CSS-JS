@@ -511,8 +511,69 @@ nav {
 	}
 }
 
+.footer {
+	background: var(--text-dark);
+}
+
+.footer__container {
+	display: grid;
+	gap: 4rem 2rem;
+	border-bottom: 1px solid var(--text-light);
+}
+
+.footer__col h4 {
+	margin-bottom: 2rem;
+	font-size: 1.2rem;
+	font-family: var(--header-font);
+	color: var(--white-color);
+}
+
+.footer__links {
+	display: grid;
+	gap: 1rem;
+
+	& a {
+		color: var(--text-light);
+
+		&:hover {
+			color: var(--white-color);
+		}
+	}
+}
+
+.footer__social {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+
+	& a {
+		display: flow;
+		padding: 8px 12px;
+		font-size: 1.2rem;
+		color: var(--text-light);
+		border: 2px solid var(--text-light);
+		border-radius: 100%;
+
+		&:hover {
+			color: var(--primary-color);
+			border-color: var(--primary-color);
+		}
+	}
+}
+
+.footer__bar {
+	padding: 1rem;
+	font-size: 0.9rem;
+	text-align: center;
+	color: var(--text-light);
+}
+
 @media (width > 540px) {
 	.story__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.footer__container {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
@@ -643,6 +704,10 @@ nav {
 
 	.contact__form {
 		margin-inline-end: unset;
+	}
+
+	.footer__container {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
